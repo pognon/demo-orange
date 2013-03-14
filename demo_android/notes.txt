@@ -1,0 +1,122 @@
+1 - Pour desinstaller : adb uninstall fr.bca.android
+2 - Pour installer/mettre à jour : adb install -r aps_1.0.0.0.apk
+3 - Pour builder tout simplement : mvn clean install
+4 - Pour installer sur le telephone depuis maven : mvn clean install android:deploy
+5 - Pour builder tout en mettant à jour le projet sous eclipse : mvn clean install eclipse:eclipse
+6 - 
+
+
+
+***********************Process de signature manuelle.(en ligne de commande)*****************
+
+keytool -genkey -v -keystore aps-release.keystore  -alias aps -keyalg RSA -keysize 2048 -validity 1000 
+
+(Password = bcaexpertise)
+
+jarsigner -verbose -keystore aps-release.keystore  aps-1.0.0-SNAPSHOT.apk aps
+
+jarsigner -verify aps-1.0.0-SNAPSHOT.apk
+
+zipalign -v 4 aps-1.0.0-SNAPSHOT.apk  bcamobile_android_v1.0.0.apk
+
+
+********************************************************************************************
+
+
+************************Commande de release depuis le pom.xml*******************************
+
+1- En mode developpement : mvn clean install (une fois l'execution terminée, il faut donner le fichier aps-1.0.0-SNAPSHOT.apk pour installation)
+
+2- En mode release : mvn -Prelease clean install  (une fois l'execution terminée, il faut donner le fichier aps-1.0.0-SNAPSHOT-signed-aligned.apk pour installation)
+
+3- En mode release avec ofuscation proguard : mvn -Prelease clean install  (une fois l'execution terminée, il faut donner le fichier aps-1.0.0-SNAPSHOT-signed-aligned.apk pour installation)
+	 
+	 * Avant de faite l'ofuscation, il faut veuiller à mettre la variable skip=false.
+	 	
+	 						<proguard>
+							  <skip>false</skip>
+							</proguard>
+
+
+*********************************************************************************************
+
+
+
+http://code.google.com/p/maven-android-plugin/wiki/ProGuard
+
+
+How to test proguard : 
+
+Normally the size will indicate whether ProGuard has worked but you can :-
+
+1 - Use Dex2Jar to convert the apk to a jar file  : dex2jar.sh aps-1.0.0-SNAPSHOT-signed-aligned.apk
+2 - Open the resulting Jar file with Jd-Gui to view the code it contains
+
+
+
+
+1 - Pour desinstaller : adb uninstall fr.bca.android
+2 - Pour installer/mettre à jour : adb install -r aps_1.0.0.0.apk
+3 - Pour builder tout simplement : mvn clean install
+4 - Pour installer sur le telephone depuis maven : mvn clean install android:deploy
+5 - Pour builder tout en mettant à jour le projet sous eclipse : mvn clean install eclipse:eclipse
+6 - 
+
+
+
+***********************Process de signature manuelle.(en ligne de commande)*****************
+
+keytool -genkey -v -keystore aps-release.keystore  -alias aps -keyalg RSA -keysize 2048 -validity 1000 
+
+(Password = bcaexpertise)
+
+jarsigner -verbose -keystore aps-release.keystore  aps-1.0.0-SNAPSHOT.apk aps
+
+jarsigner -verify aps-1.0.0-SNAPSHOT.apk
+
+zipalign -v 4 aps-1.0.0-SNAPSHOT.apk  bcamobile_android_v1.0.0.apk
+
+
+********************************************************************************************
+
+
+************************Commande de release depuis le pom.xml*******************************
+
+1- En mode developpement : mvn clean install (une fois l'execution terminée, il faut donner le fichier aps-1.0.0-SNAPSHOT.apk pour installation)
+
+2- En mode release : mvn -Prelease clean install  (une fois l'execution terminée, il faut donner le fichier aps-1.0.0-SNAPSHOT-signed-aligned.apk pour installation)
+
+3- En mode release avec ofuscation proguard : mvn -Prelease clean install  (une fois l'execution terminée, il faut donner le fichier aps-1.0.0-SNAPSHOT-signed-aligned.apk pour installation)
+	 
+	 * Avant de faite l'ofuscation, il faut veuiller à mettre la variable skip=false.
+	 	
+	 						<proguard>
+							  <skip>false</skip>
+							</proguard>
+
+
+*********************************************************************************************
+
+
+
+http://code.google.com/p/maven-android-plugin/wiki/ProGuard
+
+
+How to test proguard : 
+
+Normally the size will indicate whether ProGuard has worked but you can :-
+
+1 - Use Dex2Jar to convert the apk to a jar file  : dex2jar.sh aps-1.0.0-SNAPSHOT-signed-aligned.apk
+2 - Open the resulting Jar file with Jd-Gui to view the code it contains
+
+
+
+
+Links :
+
+http://viewpagerindicator.com/#introduction
+
+
+
+
+

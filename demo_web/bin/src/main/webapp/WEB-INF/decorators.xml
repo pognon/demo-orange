@@ -1,0 +1,30 @@
+<decorators defaultdir="/decorators">
+    
+        <!--
+    <excludes> 	
+		<pattern>/index.html</pattern>
+	</excludes> 
+     
+     
+    <decorator name="default" page="default.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+      
+    
+    
+    <decorator name="headerFooter" page="headerFooter.jsp">
+    	<pattern>/login</pattern>
+    	<pattern>/logout</pattern>
+    </decorator>
+     
+     
+    
+     <decorator name="main" page="main.jsp">
+    	<pattern>/controller/index</pattern>
+    	<pattern>/controller/login</pattern>
+    	<pattern>/controller/missions</pattern>
+    	<pattern>/controller/mission-detail</pattern>
+   	 </decorator>
+   	   -->
+    
+</decorators>
