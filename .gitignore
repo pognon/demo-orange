@@ -1,0 +1,10 @@
+demo_core/target
+demo_core/bin
+demo_android/target
+demo_android/bin
+demo_data/target
+demo_data/bin
+demo_service/target
+demo_service/bin
+demo_web/target
+demo_web/bin
