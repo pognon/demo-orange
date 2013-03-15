@@ -1,1 +1,4 @@
 https://github.com/impetus-opensource/Kundera-Examples/wiki/Introduction
+
+http://highscalability.com/blog/2011/6/20/35-use-cases-for-choosing-your-next-nosql-database.html
+
