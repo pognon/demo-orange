@@ -16,6 +16,24 @@
  
   
   <dependencies>
+      
+      
+      <!--  dependances pour les autres modules de l'application -->
+		
+		<dependency>
+			<groupId>fr.company.demo</groupId>
+			<artifactId>demo_data</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>fr.company.demo</groupId>
+			<artifactId>demo_core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		
+		<!-- Autres dependances -->
     
       <dependency>
 			<groupId>junit</groupId>

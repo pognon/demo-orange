@@ -1,10 +1,10 @@
 package fr.company.demo.android.activity;
 
+import android.os.Bundle;
+
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 
 import fr.company.demo.android.util.Logger;
-
-import android.os.Bundle;
 
 
 public class SherlockBaseFragmentActivity extends SherlockFragmentActivity{

@@ -1,12 +1,12 @@
 package fr.company.demo.android.component;
 
 
-import com.actionbarsherlock.app.ActionBar.Tab;
-import com.actionbarsherlock.app.ActionBar;
-
 import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.ActionBar.Tab;
 
 /**
  * From http://developer.android.com/guide/topics/ui/actionbar.html#Tabs

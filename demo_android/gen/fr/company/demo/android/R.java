@@ -13,9 +13,18 @@ public final class R {
         public static final int shake=0x7f040001;
     }
     public static final class attr {
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int buttonBarButtonStyle=0x7f010001;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int buttonBarStyle=0x7f010000;
     }
     public static final class color {
         public static final int black=0x7f060000;
+        public static final int black_overlay=0x7f060004;
         public static final int blanc=0x7f060001;
         public static final int bleu=0x7f060003;
         public static final int gris=0x7f060002;
@@ -24,31 +33,65 @@ public final class R {
         public static final int textSize_detail=0x7f070000;
     }
     public static final class drawable {
-        public static final int ic_action_recherche=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int no_image=0x7f020002;
+        public static final int arrow=0x7f020000;
+        public static final int gradient_bg=0x7f020001;
+        public static final int gradient_bg_hover=0x7f020002;
+        public static final int ic_action_recherche=0x7f020003;
+        public static final int ic_launcher=0x7f020004;
+        public static final int image_bg=0x7f020005;
+        public static final int list_selector=0x7f020006;
+        public static final int no_image=0x7f020007;
+        public static final int rihanna=0x7f020008;
+        public static final int splash1=0x7f020009;
+        public static final int splash2=0x7f02000a;
     }
     public static final class id {
-        public static final int computer_name=0x7f0a0002;
-        public static final int computer_processor=0x7f0a0004;
-        public static final int computer_ram=0x7f0a0003;
-        public static final int encours_list_fragment=0x7f0a0000;
-        public static final int share=0x7f0a0006;
-        public static final int text=0x7f0a0001;
-        public static final int write_tag=0x7f0a0005;
+        public static final int computer_name=0x7f0a0007;
+        public static final int computer_processor=0x7f0a0009;
+        public static final int computer_ram=0x7f0a0008;
+        public static final int empty=0x7f0a0003;
+        public static final int encours_list_fragment=0x7f0a0002;
+        public static final int gridView1=0x7f0a0000;
+        public static final int grid_item_image=0x7f0a0001;
+        public static final int imageViewSplash=0x7f0a0011;
+        public static final int indicator=0x7f0a000c;
+        public static final int listView=0x7f0a0004;
+        public static final int pager=0x7f0a000d;
+        public static final int searchView=0x7f0a0005;
+        public static final int share=0x7f0a000b;
+        public static final int text=0x7f0a0006;
+        public static final int thumbnail=0x7f0a000e;
+        public static final int userFullName=0x7f0a0010;
+        public static final int userImage=0x7f0a000f;
+        public static final int write_tag=0x7f0a000a;
     }
     public static final class layout {
-        public static final int demo_fragment=0x7f030000;
-        public static final int demo_list_fragment=0x7f030001;
-        public static final int login_activity=0x7f030002;
-        public static final int main=0x7f030003;
-        public static final int nfc=0x7f030004;
+        public static final int coupon_list_activity=0x7f030000;
+        public static final int credit_card_list_activity=0x7f030001;
+        public static final int dashboard_activity=0x7f030002;
+        public static final int dashboard_activity_gridview_item=0x7f030003;
+        public static final int demo_fragment=0x7f030004;
+        public static final int demo_list_fragment=0x7f030005;
+        public static final int layout_entree=0x7f030006;
+        public static final int layout_plat=0x7f030007;
+        public static final int login_activity=0x7f030008;
+        public static final int main=0x7f030009;
+        public static final int nfc=0x7f03000a;
+        public static final int payment_list_activity=0x7f03000b;
+        public static final int restaurant_carte_fragment=0x7f03000c;
+        public static final int restaurant_description_fragment=0x7f03000d;
+        public static final int restaurant_detail_activity=0x7f03000e;
+        public static final int restaurant_list_activity=0x7f03000f;
+        public static final int restaurant_list_activity_cell=0x7f030010;
+        public static final int splash_activity=0x7f030011;
     }
     public static final class string {
         public static final int app_name=0x7f080000;
         public static final int computer_name_label=0x7f080003;
         public static final int computer_processor_label=0x7f080005;
         public static final int computer_ram_label=0x7f080004;
+        public static final int dummy_button=0x7f08000f;
+        public static final int dummy_content=0x7f080010;
         public static final int instructions=0x7f080002;
         public static final int new_tag_found=0x7f080008;
         public static final int ready_to_write=0x7f08000a;
@@ -56,15 +99,63 @@ public final class R {
         public static final int replace_current_tag=0x7f080009;
         public static final int serverURL=0x7f080001;
         public static final int share_button_label=0x7f080007;
+        public static final int strNoRecordsFound=0x7f080011;
+        public static final int title_activity_splash=0x7f08000e;
         public static final int turn_on_nfc=0x7f08000d;
         public static final int warning_nfc_is_off=0x7f08000c;
         public static final int write_to_tag_button_label=0x7f080006;
     }
     public static final class style {
         public static final int AppTheme=0x7f090000;
+        public static final int ButtonBar=0x7f090003;
+        public static final int ButtonBarButton=0x7f090004;
+        public static final int FullscreenActionBarStyle=0x7f090005;
+        public static final int FullscreenTheme=0x7f090002;
         public static final int NoActionBar=0x7f090001;
     }
     public static final class xml {
         public static final int preferences=0x7f050000;
     }
+    public static final class styleable {
+        /** 
+         Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels.
+    
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ButtonBarContainerTheme_buttonBarButtonStyle fr.company.demo.android:buttonBarButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ButtonBarContainerTheme_buttonBarStyle fr.company.demo.android:buttonBarStyle}</code></td><td></td></tr>
+           </table>
+           @see #ButtonBarContainerTheme_buttonBarButtonStyle
+           @see #ButtonBarContainerTheme_buttonBarStyle
+         */
+        public static final int[] ButtonBarContainerTheme = {
+            0x7f010000, 0x7f010001
+        };
+        /**
+          <p>This symbol is the offset where the {@link fr.company.demo.android.R.attr#buttonBarButtonStyle}
+          attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:buttonBarButtonStyle
+        */
+        public static final int ButtonBarContainerTheme_buttonBarButtonStyle = 1;
+        /**
+          <p>This symbol is the offset where the {@link fr.company.demo.android.R.attr#buttonBarStyle}
+          attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:buttonBarStyle
+        */
+        public static final int ButtonBarContainerTheme_buttonBarStyle = 0;
+    };
 }

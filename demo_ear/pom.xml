@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>fr.company.demo</groupId>
+    <artifactId>demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <<artifactId>demo_ear</artifactId>
+  <packaging>ear</packaging>
+  <name>Application Blanche : EAR</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+    
+      <dependency>
+			<groupId>fr.company.demo</groupId>
+			<artifactId>ab_web</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+		
+       <dependency>
+			<groupId>fr.company.demo</groupId>
+			<artifactId>ab_service</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+		
+  </dependencies>
+  
+  <build>		
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<modules>
+						<webModule>
+							<groupId>fr.company.demo</groupId>
+							<artifactId>demo_web</artifactId>
+							<contextRoot>/demo-web</contextRoot>
+						</webModule>
+						<webModule>
+							<groupId>fr.company.demo</groupId>
+							<artifactId>demo_service</artifactId>
+							<contextRoot>/demo-service</contextRoot>
+						</webModule>
+					</modules>
+					<archive>
+						<manifest>
+							<addClasspath>false</addClasspath>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+</project>

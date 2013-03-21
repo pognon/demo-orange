@@ -1,0 +1,539 @@
+Login mobile : via FB API
+Login web : via JAAS
+
+HOST: http://www.wakou.com/
+
+--- Sample API v1.0 ---
+---
+Welcome to the our sample API documentation. All comments can be written in (support [Markdown](http://daringfireball.net/projects/markdown/syntax) syntax)
+---
+
+--
+Login Resources
+The following is a section of resources related to the Login
+--
+Help user to log in to the system
+POST /api/mobile/signin
+> Content-Type: application/json
+{
+    "wsCallerId":"xxxxxx",
+    "hash":"xxxxxxx",
+    "timestamp":"xxxxxxxx",
+    "username":"xxxxxxxxxxxx",
+    "password":"xxxxxxxxxxxxx"
+}
+< 200
+< Content-Type: application/json
+{
+    "status":true,
+    "sessionToken":"xxxxxxxxxxxxx"
+}
+
+Help user to sign up to the service
+POST /api/mobile/signup
+> Content-Type: application/json
+{
+    "wsCallerId":"xxxxxx",
+    "hash":"xxxxxxx",
+    "timestamp":"xxxxxxxx",
+    "username":"xxxxxxxxxxxx",
+    "password":"xxxxxxxxxxxxx",
+    "passwordConfirm":"xxxxxxxxxxxxx",
+    "email":"xxxxxxxxxxxxx"
+}
+< 200
+< Content-Type: application/json
+{
+    "status":true,
+    "identifier":"xxxxxxxxxxxxx"
+}
+
+
+-- Credit Card Resources --
+Add new credit card to the system (this information is inside the app).
+
+POST /api/mobile/addCard
+> Content-Type: application/json
+{
+    "wsCallerId":"xxxxxx",
+    "hash":"xxxxxxx",
+    "timestamp":"xxxxxxxx",
+    "bankAccountNumber":"xxxxxxxxxxxx",
+    "dateExpired":"xxxxxxxxxxxxx",
+    "icv":"xxxxxxxxxxxxx",
+    "accountOwner":"xxxxxxxxx",
+    "secret":"xxxxxx",
+    "friendlyName":"xxxxx"
+}
+< 200
+< Content-Type: application/json
+{ "ack": "/api/mobile/card/1" }
+
+Display the list of the user's credit cards
+POST /api/mobile/cards
+> Content-Type: application/json
+< 200
+< Content-Type: application/json
+{
+    "cards":[{
+            "id":"240",
+            "bankAccountNumber":"xxxxxxxx",
+            "friendlyName":"xxxxxxxx"
+        },
+        {
+           "id":"240",
+            "bankAccountNumber":"xxxxxxxx",
+            "friendlyName":"xxxxxxxx"
+        },
+        {
+            "id":"240",
+            "bankAccountNumber":"xxxxxxxx",
+            "friendlyName":"xxxxxxxx"
+        }
+    ]
+}
+
+Get a given credit card detail
+POST /api/mobile/card/{id}
+> Content-Type: application/json
+< 200
+< Content-Type: application/json
+{
+    "bankAccountNumber":"xxxxxxxxxxxx",
+    "dateExpired":"xxxxxxxxxxxxx",
+    "accountOwner":"xxxxxxxxx",
+    "friendlyName":"xxxxx"
+}
+
+-- Coupon Resources --
+Get the list of available coupons
+POST /api/mobile/coupons
+> Content-Type: application/json
+< 200
+< Content-Type: application/json
+{
+    "coupons":[{
+            "id":"240",
+            "organisationName":"xxxxxxxx",
+            "description":"xxxxxxxx",
+            "logoText":"xxxxxxxx",
+            "logoImage":"xxxxx",
+            "serialNumber":"xxxxxx",
+            "url":"http://link.pkpass/#"
+        },
+        {
+           "id":"240",
+            "organisationName":"xxxxxxxx",
+            "description":"xxxxxxxx",
+            "logoText":"xxxxxxxx",
+            "logoImage":"xxxxx",
+            "serialNumber":"xxxxxx",
+            "url":"http://link.pkpass/#"
+        },
+        {
+            "id":"240",
+            "organisationName":"xxxxxxxx",
+            "description":"xxxxxxxx",
+            "logoText":"xxxxxxxx",
+            "logoImage":"xxxxx",
+            "serialNumber":"xxxxxx",
+            "url":"http://link.pkpass/#"
+        }
+    ]
+}
+
+Generate a coupon
+POST /api/mobile/generateCoupon
+> Content-Type: application/json
+{
+    "wsCallerId":"xxxxxx",
+    "hash":"xxxxxxx",
+    "timestamp":"xxxxxxxx",
+    "email":"xxxxxxxxxxxx",
+    "latitude":"xxxxxxxxxxxxx",
+    "longitude":"xxxxxxxxxxxxx",
+    "userFullName":"xxxxxxxxx"
+}
+< 200
+< Content-Type: application/json
+{
+            "id":"240",
+            "organisationName":"xxxxxxxx",
+            "description":"xxxxxxxx",
+            "logoText":"xxxxxxxx",
+            "logoImage":"xxxxx",
+            "serialNumber":"xxxxxx",
+            "url":"http://link.pkpass/#"
+}
+
+
+Return a given coupon
+POST /api/mobile/coupon/{id}
+> Content-Type: application/json
+< 200
+< Content-Type: application/json
+{
+    "couponStream":"xxxxxxxxxxx", "url":"xxxxxxxx"
+}
+
+-- Restaurant Resources --
+Get all the available restaurants
+POST /api/mobile/restaurants
+> Content-Type: application/json
+< 200
+< Content-Type: application/json
+{
+    "restaurants":[{
+            "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "address":"xxxxxxxx",
+            "latitude": "xxxxxxx",
+            "longitude" : "xxxxxxx"
+        },
+        {
+           "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "address":"xxxxxxxx",
+            "latitude": "xxxxxxx",
+            "longitude" : "xxxxxxx"
+        },
+        {
+           "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "address":"xxxxxxxx",
+            "latitude": "xxxxxxx",
+            "longitude" : "xxxxxxx"
+        }
+    ]
+}
+
+Return a given restaurant detail
+POST /api/mobile/restaurant/{id}
+> Content-Type: application/json
+< 200
+< Content-Type: application/json
+{
+           "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "address":"xxxxxxxx",
+            "latitude": "xxxxxxx",
+            "longitude" : "xxxxxxx",
+            "description":"xxxxxx",
+            "email":"xxxxx",
+            "phone":"xxxxx",
+            "fax":"xxxxx",
+            "rating":"4",
+            "ower":{
+                    "chef" : "pognon lorys",
+                    "second" : "Asma alibert"
+            },
+            "comments":[
+            {
+                "id":"240",
+                "description":"ABDELKRIM",
+                "authorName":"Misscook",
+                "date":"02/08/2012",
+                "note":"4"
+            },
+             {
+                "id":"240",
+                "description":"ABDELKRIM",
+                "authorName":"Misscook",
+                "date":"02/08/2012",
+                "note":"4"
+            },
+             {
+                "id":"240",
+                "description":"ABDELKRIM",
+                "authorName":"Misscook",
+                "date":"02/08/2012",
+                "note":"4"
+            }
+            ]
+}
+
+Return nearby restaurant
+POST /api/mobile/restaurants/nearby
+> Content-Type: application/json
+{
+            "distance":"xxxxxxxx",
+            "latitude": "xxxxxxx",
+            "longitude" : "xxxxxxx"
+}
+< 200
+< Content-Type: application/json
+{
+    "restaurants":[{
+            "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "address":"xxxxxxxx",
+            "latitude": "xxxxxxx",
+            "longitude" : "xxxxxxx"
+        },
+        {
+           "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "address":"xxxxxxxx",
+            "latitude": "xxxxxxx",
+            "longitude" : "xxxxxxx"
+        },
+        {
+           "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "address":"xxxxxxxx",
+            "latitude": "xxxxxxx",
+            "longitude" : "xxxxxxx"
+        }
+    ]
+}
+
+Return the available food (carte) for a given restaurant
+(Attention il n'y aura pas de table associé pour entree, plat , dessert.. On aura une table de category)
+
+POST /api/mobile/restaurant/{id}/carte
+> Content-Type: application/json
+< 200
+< Content-Type: application/json
+{
+    "entrees":[{
+            "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "price":"10",
+            "shortDescription": "xxxxxxx"
+        },
+        {
+           "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "price":"10",
+            "shortDescription": "xxxxxxx"
+        }
+    ],
+     "plats":[{
+           "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "price":"10",
+            "shortDescription": "xxxxxxx"
+        },
+        {
+          "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "price":"10",
+            "shortDescription": "xxxxxxx"
+        }
+    ],
+     "desserts":[{
+            "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "price":"10",
+            "shortDescription": "xxxxxxx"
+        },
+        {
+           "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "price":"10",
+            "shortDescription": "xxxxxxx"
+        }
+    ],
+     "boissons":[{
+           "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "price":"10",
+            "shortDescription": "xxxxxxx"
+        },
+        {
+           "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "price":"10",
+            "shortDescription": "xxxxxxx"
+        }
+    ],
+     "menus":[{
+           "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "price":"10",
+            "shortDescription": "xxxxxxx"
+        },
+        {
+          "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "price":"10",
+            "shortDescription": "xxxxxxx"
+        }
+    ]
+}
+
+Get a given item for a given restaurant
+POST /api/mobile/restaurant/{rid}/carte/item/{id}
+> Content-Type: application/json
+< 200
+< Content-Type: application/json
+{
+            "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "price":"10",
+            "shortDescription": "xxxxxxx",
+            "description": "xxxxxxx"
+}
+
+-- Transaction Resources --
+Get all the transactions for a given user (Logo du restaurant à partir de laquelle la commande est faite)
+POST  /api/mobile/transactions/user/{id}
+> Content-Type: application/json
+< 200
+< Content-Type: application/json
+{
+    "transactions":[{
+            "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",  
+            "price":"10",
+            "shortDescription": "xxxxxxx"
+        },
+        {
+           "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "price":"10",
+            "shortDescription": "xxxxxxx"
+        }
+    ]    
+}
+
+Returns a given transaction by id
+POST  /api/mobile/transaction/{id}
+> Content-Type: application/json
+< 200
+< Content-Type: application/json
+{
+           "id":"240",
+            "name":"xxxxxxxx",
+            "logoImage":"http://link.com",
+            "price":"10",
+            "shortDescription": "xxxxxxx",
+            "addressRestaurant": "xxxxxxx",
+            "logoRestaurant":"xxxxxx",
+            "imageMenu":"xxxxxx",
+            "commentaire":"xxxxxx"
+            "creditCard":"xxxxxxx",
+            "content":{
+            "entrees":[{
+               "id":"240",
+                "name":"xxxxxxxx",
+                "logoImage":"http://link.com",
+                "price":"10",
+                "shortDescription": "xxxxxxx"
+            },
+            {
+                "id":"240",
+                "name":"xxxxxxxx",
+                "logoImage":"http://link.com",
+                "price":"10",
+                "shortDescription": "xxxxxxx"
+            }
+            ], 
+            "plats":[{
+                "id":"240",
+                "name":"xxxxxxxx",
+                "logoImage":"http://link.com",
+                "price":"10",
+                "shortDescription": "xxxxxxx"
+            },
+            {
+                "id":"240",
+                "name":"xxxxxxxx",
+                "logoImage":"http://link.com",
+                "price":"10",
+                "shortDescription": "xxxxxxx"
+            }
+        ]
+            }
+   }
+
+
+-- Shopping and Payment Resources --
+
+Get the user shopping cart (Le choix de l'utilisateur au restaurant)
+POST  /api/mobile/shopping-list
+> Content-Type: application/json
+< 200
+< Content-Type: application/json
+{
+ "totalPrice":"xxxx",
+  "items":[{
+            "total":"240",
+            "name":"xxxxxxxx",
+            "priceUnit":"10",
+            "id":"xxxx",
+            "type": "xxxxxxx",
+            "quantity":"xxxxx"
+        },
+        {
+            "total":"240",
+            "name":"xxxxxxxx",
+            "priceUnit":"10",
+            "id":"xxxx",
+            "type": "xxxxxxx",
+            "quantity":"xxxxx"
+        }
+    ]
+ }
+
+
+Add item to the shopping cart
+POST  /api/mobile/addItem
+> Content-Type: application/json
+{ "id":"1AB23ORM", "quantity": 2 }
+< 200
+< Content-Type: application/json
+{ "status": "created", "url": "/api/mobile/shopping/2" }
+
+Remove item from shopping cart
+
+POST  /api/mobile/removeItem
+> Content-Type: application/json
+{ "id":"1AB23ORM"}
+< 200
+< Content-Type: application/json
+{ "status": "removed"}
+
+Payment method
+POST  /api/mobile/payment
+> Content-Type: application/json
+{ "cc": "12345678900", "cvc": "123", "expiry": "0112" }
+< 200
+< Content-Type: application/json
+{ "receipt": "/api/mobile/payment/receipt/1" }
+
+
+
+
+
+ 
+
+
+
+Autres :
+
+- /api/mobile/storePostedOGObject/xxxxxxxx   ---> sauvegarder l'identifiant associé à un object open graph posté sur 
+                                                le mur d'un utilisateur. Permettra de recuperer le #comment, #Likes... de l'objet.  
+
+
+

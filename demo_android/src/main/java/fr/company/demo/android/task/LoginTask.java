@@ -9,7 +9,6 @@ import org.json.JSONObject;
 import android.content.Context;
 import fr.company.demo.android.model.Login;
 import fr.company.demo.android.util.Logger;
-import fr.company.demo.android.util.PropertyManager;
 
 
 
@@ -33,7 +32,7 @@ public class LoginTask extends GenericServerCommand{
 		this.fileName = "LoginResponse.plist";
 		//this.objectKey = "loginDto";
 		this.token = commandToken;
-		this.url = PropertyManager.getWSEndpointURI() + "/login";
+		//this.url = PropertyManager.getWSEndpointURI() + "/login";
 		this.shouldPersistResponse = false;
 		this.activity = activity;
 		

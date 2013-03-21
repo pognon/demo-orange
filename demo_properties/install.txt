@@ -1,0 +1,10 @@
+Pour le faire marcher c'est simple. 
+Je vous invite à installer Jboss 7.1.1-final : http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.zip
+
+1 - Dezipper ceci dans un repertoire si possible sans espace dans son nom
+2 - Placer le fichier demo_service-1.0.0-SNAPSHOT.war (ou bien directement l'EAR) dans le repertoire jboss-as-7.1.1.Final/standalone/deployments
+3 - Dezipper le repertoire props  dans jboss-as-7.1.1.Final/modules  (props est un module specifique pour le projet)
+4 - Remplacer le fichier standalone.xml du repertoire jboss-as-7.1.1.Final/standalone/configuration    par celui fourni dans ce mail
+5 - Demarrer le serveur avec la commande ./standalone.sh -b 0.0.0.0 lancée depuis le repertoire : jboss-as-7.1.1.Final/bin 
+
+6 - Pour verifier l'installtion n'hesitez pas à aller sur cette url : http://localhost:8080/ab_service_mgr/api/application.wadl pour voir si vous recevez les verbes des services.

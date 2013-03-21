@@ -6,7 +6,9 @@ import android.util.Log;
 public class Logger {
 	
 	public static void log(String flag, String message){
-		if(PropertyManager.isLogEnabled())Log.v(flag, message);
+		//if(PropertyManager.isLogEnabled())Log.v(flag, message);
+		
+		Log.v(flag, message);
 		
 	}
 

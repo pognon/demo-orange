@@ -1,0 +1,14 @@
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.0">
+	<sub-deployment name="demo_web-0.0.1-SNAPSHOT.war">
+		<dependencies>
+			<module name="props" />
+		</dependencies>
+	</sub-deployment>
+	
+	<sub-deployment name="demo_service-0.0.1-SNAPSHOT.war">
+		<dependencies>
+			<module name="props" />
+		</dependencies>
+	</sub-deployment>
+	
+</jboss-deployment-structure>

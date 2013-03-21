@@ -1,5 +1,8 @@
 package fr.company.demo.service.mobile;
 
+import static com.jayway.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.containsString;
+
 import java.util.Collections;
 
 import org.apache.log4j.Logger;
@@ -54,5 +57,14 @@ public class MobileWebServiceCallerTest {
 		LOG.info("The result is : " + resultString);
 		
 	}
+	
+	@Test
+	public void testUsingDSL(){
+		given().param("key1", "value1").param("key2", "value2").
+		expect().body(containsString("OK")).
+		when().post("/somewhere");
+	}
+	
+	
 
 }

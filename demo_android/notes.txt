@@ -116,6 +116,11 @@ Links :
 
 http://viewpagerindicator.com/#introduction
 
+- mvn eclipse:clean eclipse:eclipse
+- add gen folder as source folder
+- mvn android:emulator-start
+
+
 
 
 

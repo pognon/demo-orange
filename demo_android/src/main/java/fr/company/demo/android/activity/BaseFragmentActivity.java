@@ -1,8 +1,8 @@
 package fr.company.demo.android.activity;
 
-import fr.company.demo.android.util.Logger;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import fr.company.demo.android.util.Logger;
 
 
 public class BaseFragmentActivity extends FragmentActivity{

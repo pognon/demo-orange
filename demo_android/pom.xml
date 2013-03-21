@@ -14,7 +14,7 @@
 
 	<prerequisites>
 		<!-- Obligation d'utiliser Maven 3 pour le plugin Maven-Android -->
-		<maven>3.0.3</maven>
+		<maven>3.0.5</maven>
 	</prerequisites>
 
 	<properties>

@@ -5,14 +5,14 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="14"
-        android:targetSdkVersion="15" />
-    
-      <uses-feature
+        android:minSdkVersion="11"
+        android:targetSdkVersion="16" />
+
+    <uses-feature
         android:name="android.hardware.nfc"
         android:required="false" />
-    <uses-permission android:name="android.permission.NFC" />
 
+    <uses-permission android:name="android.permission.NFC" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -25,24 +25,30 @@
         <!-- Activity declaration -->
 
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.SplashActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        
         <activity
             android:name=".activity.NFCInventoryActivity"
             android:launchMode="singleTask" >
+            
+            <!-- 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
+			 -->
+			 
             <!-- Handle NFC tags detected from outside our application -->
+            
+            <!-- 
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED" />
 
@@ -50,8 +56,14 @@
 
                 <data android:mimeType="app/fr.nfcdemo" />
             </intent-filter>
+             -->
         </activity>
-        <activity android:name=".activity.LoginActivity" />
+       
+         <activity android:name=".activity.DashboardActivity" />
+         <activity android:name=".activity.LoginActivity" />
+         <activity android:name=".activity.RestaurantDetailActivity" />
+         <activity android:name=".activity.RestaurantListActivity" />
+         
 
         <!-- Service declaration -->
 
@@ -60,7 +72,8 @@
 
 
         <!-- Content provider declaration -->
-
+   
+   
     </application>
 
 </manifest>

@@ -1,10 +1,9 @@
 package fr.company.demo.android.activity;
 
-import fr.company.demo.android.R;
-import android.app.Activity;
 import android.os.Bundle;
+import fr.company.demo.android.R;
 
-public class MainActivity extends Activity
+public class MainActivity extends SherlockBaseActivity
 {
     /** Called when the activity is first created. */
     @Override

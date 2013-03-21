@@ -4,11 +4,8 @@ import java.io.InputStream;
 import java.util.Properties;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
-import android.preference.PreferenceManager;
-import fr.company.demo.android.R;
 
 public class PropertyManager {
 
@@ -16,13 +13,10 @@ public class PropertyManager {
 
 	private static Properties properties;
 	
-	private static Activity activity;
-	
 
 	public PropertyManager(Activity activity) {
 		try {
 			
-			this.activity = activity;
 			Resources resources = activity.getResources();
 			AssetManager assetManager = resources.getAssets();
 			InputStream inputStream = assetManager.open("app.properties");
@@ -43,13 +37,6 @@ public class PropertyManager {
 	
 	public static String getProperty(String key){
 		return properties.getProperty(key);
-	}
-	
-	
-	
-	public static String getWSEndpointURI(){
-		SharedPreferences myprefs = PreferenceManager.getDefaultSharedPreferences(activity);
-		return myprefs.getString(activity.getResources().getString(R.string.serverURL), "");
 	}
 	
 	

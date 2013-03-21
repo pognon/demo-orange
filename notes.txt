@@ -1,4 +1,32 @@
 https://github.com/impetus-opensource/Kundera-Examples/wiki/Introduction
-
 http://highscalability.com/blog/2011/6/20/35-use-cases-for-choosing-your-next-nosql-database.html
+http://chrisrisner.com/Adding-Push-Notifications-to-Android-Apps-with-Mobile-Services
+http://architects.dzone.com/articles/working-mongodb-using-kundera
+http://newrelic.com/
+http://architects.dzone.com/articles/working-remotely-best-thing
+https://join.me/
+http://aboutecho.com/EchoPlatform/StreamServer
+http://grr.mutualibre.org/
+http://bajratechnologies.com/category/blog/
+http://www.thebuzzmedia.com/designing-a-secure-rest-api-without-oauth-authentication/
+http://www.hascode.com/2011/10/testing-restful-web-services-made-easy-using-the-rest-assured-framework/
 
+http://apiary.io/
+
+https://github.com/openaphid/android-flip
+http://s.android.com/source/code-style.html
+
+Problem : R is already defined ---> http://www.fairtec.at/en/it-blog-mainmenu-16/168-the-type-r-is-already-defined
+
+https://code.google.com/p/rest-assured/
+
+https://github.com/bitzeche/jpasskit
+
+http://passsource.com/
+
+http://stackoverflow.com/questions/14559959/pkpass-on-android
+http://developer.android.com/guide/topics/ui/actionbar.html
+https://create.passkit.com/
+https://trello.com
+https://cacoo.com
+https://www.pegby.com/
