@@ -8,3 +8,5 @@ demo_service/target
 demo_service/bin
 demo_web/target
 demo_web/bin
+demo_ear/target
+demo_ear/target

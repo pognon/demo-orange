@@ -33,7 +33,7 @@ public class RestaurantDetailActivity extends SherlockBaseFragmentActivity{
 				actionBar.setDisplayUseLogoEnabled(false);
 				actionBar.setDisplayShowTitleEnabled(true);
 				actionBar.setDisplayShowHomeEnabled(true);
-				actionBar.setDisplayHomeAsUpEnabled(true);
+				actionBar.setDisplayHomeAsUpEnabled(false);
 
 				// Configuration des tabs dans l'actionbar
 				ActionBar.Tab tab = actionBar

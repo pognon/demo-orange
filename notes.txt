@@ -30,3 +30,6 @@ https://create.passkit.com/
 https://trello.com
 https://cacoo.com
 https://www.pegby.com/
+
+http://mobile.tutsplus.com/tutorials/android/android-gesture/
+http://stackoverflow.com/questions/10836927/swipe-to-delete-listitem

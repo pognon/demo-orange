@@ -14,7 +14,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 import fr.company.demo.android.R;
+import fr.company.demo.android.listener.OnSwipeTouchListener;
 import fr.company.demo.android.model.Restaurant;
 import fr.company.demo.android.photo.ImageLoader;
 
@@ -40,6 +42,19 @@ public class RestaurantListActivity extends SherlockBaseActivity{
 		
 		
 		// Retreive restaurants
+		
+		
+		restaurants = new ArrayList<Restaurant>();
+		
+		Restaurant resto1 = new Restaurant();
+		resto1.setName("resto1");
+		
+		Restaurant resto2 = new Restaurant();
+		resto2.setName("resto2");
+		
+		restaurants.add(resto1);
+		restaurants.add(resto2);
+		
 		
 		listView.setAdapter(new RestaurantListAdapter(restaurants));
 
@@ -84,15 +99,31 @@ public class RestaurantListActivity extends SherlockBaseActivity{
 				v = inflater.inflate(R.layout.restaurant_list_activity_cell,null);
 				holder = new ViewHolder();
 
-				holder.fullName = (TextView) v.findViewById(R.id.userFullName);
+				holder.name = (TextView) v.findViewById(R.id.userFullName);
 				holder.imageView = (ImageView) v.findViewById(R.id.userImage);
 				
-				/*
-				imageLoader.DisplayImage(restaurant.getPhotoURL(), holder.imageView);
-				holder.fullName.setText(restaurant.getPrenom() + " " + restaurant.getNom());
-				*/
+				
+				//imageLoader.DisplayImage(restaurant.getName(), holder.imageView);
+				holder.name.setText(restaurant.getName());
+				
 				
 				v.setTag(holder);
+				
+				// set the swipe listener
+				v.setOnTouchListener(new OnSwipeTouchListener() {
+				    public void onSwipeTop() {
+				        Toast.makeText(RestaurantListActivity.this, "top", Toast.LENGTH_SHORT).show();
+				    }
+				    public void onSwipeRight() {
+				        Toast.makeText(RestaurantListActivity.this, "right", Toast.LENGTH_SHORT).show();
+				    }
+				    public void onSwipeLeft() {
+				        Toast.makeText(RestaurantListActivity.this, "left", Toast.LENGTH_SHORT).show();
+				    }
+				    public void onSwipeBottom() {
+				        Toast.makeText(RestaurantListActivity.this, "bottom", Toast.LENGTH_SHORT).show();
+				    }
+				});
 				
 			} else {
 				holder = (ViewHolder) v.getTag();
@@ -113,7 +144,7 @@ public class RestaurantListActivity extends SherlockBaseActivity{
 	// Custom ViewHolder for list item reusability
 	public static class ViewHolder {
 		public ImageView imageView;
-		public TextView fullName;
+		public TextView name;
 	}
 	
 	

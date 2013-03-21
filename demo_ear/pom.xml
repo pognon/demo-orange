@@ -19,14 +19,14 @@
     
       <dependency>
 			<groupId>fr.company.demo</groupId>
-			<artifactId>ab_web</artifactId>
+			<artifactId>demo_web</artifactId>
 			<version>${project.version}</version>
 			<type>war</type>
 		</dependency>
 		
        <dependency>
 			<groupId>fr.company.demo</groupId>
-			<artifactId>ab_service</artifactId>
+			<artifactId>demo_service</artifactId>
 			<version>${project.version}</version>
 			<type>war</type>
 		</dependency>
